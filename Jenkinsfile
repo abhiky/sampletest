@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh 'i am here'
+        sh 'echo "i am here"'
       }
     }
   }
