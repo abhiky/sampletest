@@ -1,15 +1,21 @@
 pipeline {
-  agent {
-  docker {
-    image 'ubuntu:latest'
-  }
-}
+  agent none
+
   stages {
     stage('error') {
-      steps {
-        sh 'echo "i am here"'
-        sh 'cat  /etc/os-release'
-      }
-    }
-  }
+          agent {
+          docker {
+            image 'ubuntu:latest'
+          } //docker image
+        } //end agent
+      
+        steps {
+          sh 'echo "i am here"'
+          sh 'cat  /etc/os-release'
+        }
+          
+    } // end stage
+    
+    
+  } // end stages
 }
