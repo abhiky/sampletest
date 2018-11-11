@@ -8,6 +8,7 @@ pipeline {
     stage('error') {
       steps {
         sh 'echo "i am here"'
+        sh 'cat  /etc/os-release'
       }
     }
   }
