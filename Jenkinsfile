@@ -34,12 +34,13 @@ pipeline {
         steps {
           sh 'echo "i am here"'
           sh 'cat  /etc/os-release'
+                sh 'echo "i am in ${env.BUILD_ID}"'
+          sh 'echo "i am using ${currentBuild.number}"'
         }
                       post {
         always {
           sh 'echo "i am in post2"'
-          sh 'echo "i am in ${env.BRANCH_NAME}"'
-          sh 'echo "i am using ${currentBuild.number}"'
+    
         }
       }
           
