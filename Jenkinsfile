@@ -38,6 +38,8 @@ pipeline {
                       post {
         always {
           sh 'echo "i am in post2"'
+          sh 'echo "i am in ${BRANCH_NAME}"'
+          sh 'echo "i am using ${currentBuild.number}"'
         }
       }
           
