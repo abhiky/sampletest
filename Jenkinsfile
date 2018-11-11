@@ -14,6 +14,13 @@ pipeline {
           sh 'cat  /etc/os-release'
         }
           
+
+            post {
+        always {
+          sh 'echo "i am in post1"'
+        }
+      }
+      
     } // end stage
     
     
@@ -28,6 +35,11 @@ pipeline {
           sh 'echo "i am here"'
           sh 'cat  /etc/os-release'
         }
+                      post {
+        always {
+          sh 'echo "i am in post2"'
+        }
+      }
           
     } // end stage
     
