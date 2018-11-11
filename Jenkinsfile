@@ -34,8 +34,8 @@ pipeline {
         steps {
           sh 'echo "i am here"'
           sh 'cat  /etc/os-release'
-                sh 'echo "i am in ${env.BUILD_ID}"'
-          sh 'echo "i am using ${currentBuild.number}"'
+          echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+
         }
                       post {
         always {
