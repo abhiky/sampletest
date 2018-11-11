@@ -2,7 +2,7 @@ pipeline {
   agent none
 
   stages {
-    stage('error') {
+    stage('ubuntu release') {
           agent {
           docker {
             image 'ubuntu:latest'
@@ -15,6 +15,22 @@ pipeline {
         }
           
     } // end stage
+    
+    
+        stage('rhel release') {
+          agent {
+          docker {
+            image 'alpine:latest'
+          } //docker image
+        } //end agent
+      
+        steps {
+          sh 'echo "i am here"'
+          sh 'cat  /etc/os-release'
+        }
+          
+    } // end stage
+    
     
     
   } // end stages
